@@ -30,6 +30,7 @@ public class ClienteTest {
         assertNotNull(qtdDel);
     }
 
+
     @Test
     public void buscarTodosTest() throws Exception {
         IClienteDAO dao = new ClienteDAO();

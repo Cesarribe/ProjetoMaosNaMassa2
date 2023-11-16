@@ -40,7 +40,7 @@ public class ProdutoDAO implements IProdutoDAO {
         Produto produto = null;
         try {
             connection = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM TB_PRODUTO WHERE CODIGO = ?";
+            String sql = "SELECT * FROM TB_PRODUTO WHERE id = ?";
             stm = connection.prepareStatement(sql);
             stm.setString(1, codigo);
             rs = stm.executeQuery();
@@ -93,7 +93,7 @@ public class ProdutoDAO implements IProdutoDAO {
                     Produto produto = new Produto();
                     produto.setId(rs.getLong("id"));
                     produto.setNome(rs.getString("nome"));
-                    produto.setPreco(rs.getDouble("preço"));
+                    produto.setPreco(rs.getDouble("preco"));
                     products.add(produto);
                 }
 
