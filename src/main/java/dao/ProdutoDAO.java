@@ -85,7 +85,7 @@ public class ProdutoDAO implements IProdutoDAO {
 
             try {
                 connection = ConnectionFactory.getConnection();
-                String sql = "SELECT * FROM TB_PRODUCT";
+                String sql = "SELECT * FROM TB_PRODUTO";
                 stm = connection.prepareStatement(sql);
                 rs = stm.executeQuery();
 
@@ -113,7 +113,7 @@ public class ProdutoDAO implements IProdutoDAO {
 
             try {
                 connection = ConnectionFactory.getConnection();
-                String sql = "UPDATE TB_PRODUCT SET NAME = ?, PRICE = ? WHERE ID = ?";
+                String sql = "UPDATE TB_PRODUTO SET NOME = ?, PRECO = ? WHERE ID = ?";
                 stm = connection.prepareStatement(sql);
                 stm.setString(1, produto.getNome());
                 stm.setDouble(2, produto.getPreco());
